@@ -175,6 +175,7 @@ protected <T> T doGetBean(
 	}
 ```
 根据其大致的加载过程做出的时序图如下：
+![4-1](../Figures/4-1.png)
 ## 2.1 从缓存中获取singleton的bean
 在Spring中，scope为singleton的bean只会创建一次，后面再使用getBean从容器中取出的bean都是同一个。所以加载bean时，首先尝试从缓存中加载。我们进入到getSingleton方法中查看其过程。要说明的是DefaultSingletonBeanRegistry所持有的几个map中：
 - singletonObjects表示BeanName与bean实例的关系；
